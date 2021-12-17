@@ -40,8 +40,18 @@ namespace HelloWorld
             return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
         }
 
+        [ServerRpc]
+        void HandleInputServerRpc()
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                Position.Value -= new Vector3(1, 0, 0);
+            }
+        }
+
         void Update()
         {
+            HandleInputServerRpc();
             transform.position = Position.Value;
         }
     }
