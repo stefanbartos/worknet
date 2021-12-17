@@ -8,7 +8,7 @@ namespace HelloWorld
     {
         void OnGUI()
         {
-            GUILayout.BeginArea(new Rect(10, 10, 300, 300));
+            GUILayout.BeginArea(new Rect(10, 10, 600, 600));
             if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
             {
                 StartButtons();
